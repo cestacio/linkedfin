@@ -31,6 +31,7 @@ const people = [
 ]
 
 const namesList = document.querySelector('[data-names]');
+
 function selectNames() {
   const duplicates = [];
   let arrayOfNames = [];
@@ -40,16 +41,32 @@ function selectNames() {
       i--;
       continue;
      }
-  duplicates.push(selectedName);
-  var node = document.createElement("LI");                 // Create a <li> node
-  var textnode = document.createTextNode(selectedName);         // Create a text node
-  node.appendChild(textnode);
-  namesList.appendChild(node);
+    duplicates.push(selectedName);
+    var node = document.createElement("LI");                 // Create a <li> node
+    var textnode = document.createTextNode(selectedName);         // Create a text node
+    node.appendChild(textnode);
+    namesList.appendChild(node);
   }
 }
 
+function populateUserProfile() {
+  const personInfo = document.querySelector('[data-person-info]');
+  const random = people[Math.floor(Math.random()*people.length)];
+  addElement(personInfo, 'h4', random.name);
+  addElement(personInfo, 'p', random.level);
+  addElement(personInfo, 'p', random.location);
+}
+
+function addElement(element, attr, text) {
+  let node = document.createElement(attr);
+  let textnode = document.createTextNode(text);
+  node.appendChild(textnode);
+  node.classList.add('card-title')
+  element.appendChild(node);
+}
 
 
+populateUserProfile();
 selectNames();
 // node.appendChild(textnode);                              // Append the text to <li>
 // document.getElementById("myList").appendChild(node);
