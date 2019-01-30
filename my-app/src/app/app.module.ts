@@ -4,11 +4,19 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PeopleComponent } from './people/people.component';
+import { HomeComponent } from './home/home.component';
+import { InterestComponent } from './interest/interest.component';
+import { SignupComponent } from './signup/signup.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PeopleComponent
+    PeopleComponent,
+    HomeComponent,
+    InterestComponent,
+    SignupComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
