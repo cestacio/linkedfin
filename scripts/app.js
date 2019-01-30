@@ -14,6 +14,8 @@
 //   'Mara'
 // ];
 
+// These functions go with the user profile page
+
 const people = [
   {name: 'Bob', level: 'C1', location: 'PHL'},
   {name: 'Jane', level: 'C1', location: 'SEA'},
@@ -29,25 +31,6 @@ const people = [
   {name: 'Ryan', level: 'C2', location: 'NYC'},
   {name: 'Mara', level: 'M2', location: 'HOU'}
 ]
-
-const namesList = document.querySelector('[data-names]');
-
-function selectNames() {
-  const duplicates = [];
-  let arrayOfNames = [];
-  for (let i = 0; i < 5; i++) {
-    let selectedName = people[Math.floor(Math.random()*people.length)].name;
-    if (duplicates.indexOf(selectedName) !== -1) {
-      i--;
-      continue;
-     }
-    duplicates.push(selectedName);
-    var node = document.createElement("LI");                 // Create a <li> node
-    var textnode = document.createTextNode(selectedName);         // Create a text node
-    node.appendChild(textnode);
-    namesList.appendChild(node);
-  }
-}
 
 function populateUserProfile() {
   const personInfo = document.querySelector('[data-person-info]');
@@ -65,8 +48,9 @@ function addElement(element, attr, text) {
   element.appendChild(node);
 }
 
-
 populateUserProfile();
-selectNames();
+
+
+
 // node.appendChild(textnode);                              // Append the text to <li>
 // document.getElementById("myList").appendChild(node);
