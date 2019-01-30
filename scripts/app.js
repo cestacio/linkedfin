@@ -34,11 +34,13 @@ const people = [
 
 function populateUserProfile() {
   const personInfo = document.querySelector('[data-person-info]');
-  const random = people[Math.floor(Math.random()*people.length)];
+  const random = people[getRandomIndex()];
   addElement(personInfo, 'h4', random.name);
   addElement(personInfo, 'p', random.level);
   addElement(personInfo, 'p', random.location);
 }
+
+const getRandomIndex = () => Math.floor(Math.random()*people.length);
 
 function addElement(element, attr, text) {
   let node = document.createElement(attr);

@@ -18,20 +18,27 @@ const people = [
 
 function selectNames() {
   const duplicates = [];
-  let arrayOfNames = [];
   for (let i = 0; i < 5; i++) {
-    let selectedName = people[Math.floor(Math.random()*people.length)].name;
-    if (duplicates.indexOf(selectedName) !== -1) {
+    let selectedName = people[getRandomIndex()].name;
+    if (duplicates.includes(selectedName)) {
       i--;
       continue;
      }
     duplicates.push(selectedName);
-    var node = document.createElement("LI");                 // Create a <li> node
-    var textnode = document.createTextNode(selectedName);         // Create a text node
-    node.appendChild(textnode);
-    namesList.appendChild(node);
+    makeElement("li", selectedName);
   }
+
 }
+
+function makeElement(element, selectedName) {
+  let node = document.createElement(element);                 // Create a <li> node
+  let textnode = document.createTextNode(selectedName);         // Create a text node
+  node.appendChild(textnode);
+  namesList.appendChild(node);
+}
+
+const getRandomIndex = () => Math.floor(Math.random()*people.length);
+
 
 document.getElementById("new-fins").addEventListener("click", () => {
   namesList.innerHTML = "";
