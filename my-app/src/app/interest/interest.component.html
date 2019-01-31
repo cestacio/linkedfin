@@ -50,8 +50,8 @@
     <div class="row">
       <div class="col-md-8 border-right">
         <h2>New Fins!</h2>
-        <ul class="list-group" data-names>
-          <!-- Dynamically added -->
+        <ul class="list-group" *ngFor="let person of people">
+          <li>{{ person.name }}</li>
         </ul>
         <button id="new-fins" class="btn btn-secondary">Click to meet new fins</button>
       </div>
@@ -82,6 +82,5 @@
   integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
   crossorigin="anonymous"
 ></script>
-<script src="./scripts/match.js"></script>
 </body>
 </html>
