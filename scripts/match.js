@@ -34,6 +34,7 @@ function makeElement(element, selectedName) {
   let node = document.createElement(element);                 // Create a <li> node
   let textnode = document.createTextNode(selectedName);         // Create a text node
   node.appendChild(textnode);
+  node.classList.add("list-group-item");
   namesList.appendChild(node);
 }
 
