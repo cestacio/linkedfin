@@ -53,30 +53,93 @@
         </div>
       </nav>
     </div>
-    
-  <div class="container w-75 pt-5 pb-5" style="background-color: rgba(255, 255, 224, 0.65); border-radius: 10px">
-    <h1 class="text-center mx-auto font-weight-bold">Music</h1>
-    <hr class="pb-2">
-    <div class="row">
-      <div class="col-md-6 border-right">
-        <h2>New Fins!</h2>
-        <ul class="list-group w-50" *ngFor="let person of randomPeople">
-            <li class="list-group-item">{{ person.name }}</li>
-          </ul>
-          <button class="mt-3" (click)='onButtonClick()'>Click to meet new fins</button>
+
+    <ng-template [ngIf]="matched">
+      <div class="container w-75 pt-5 pb-5" style="background-color: rgba(255, 255, 224, 0.65); border-radius: 10px">
+        <h1 class="text-center mx-auto font-weight-bold">Music</h1>
+        <hr class="pb-2">
+        <div class="row">
+          <div class="col-md-6 border-right">
+            <h2>New Fins!</h2>
+            <ul class="list-group w-50" *ngFor="let person of randomPeople">
+                <li class="list-group-item">{{ person.name }}</li>
+            </ul>
+            <button class="mt-3" (click)='onButtonClick()'>Click to meet new fins</button>
+          </div>
+          <div class="col-md-6 border-right">
+            <h2>Matched Fins</h2>
+            <ul class="list-group w-50">
+              <li class="list-group-item">Bob</li>
+              <li class="list-group-item">Jane</li>
+              <li class="list-group-item">Joseph</li>
+              <li class="list-group-item">Miki</li>
+              <li class="list-group-item">Selena</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6 border-right">
-        <h2>Matched Fins</h2>
-        <ul class="list-group w-50">
-          <li class="list-group-item">Bob</li>
-          <li class="list-group-item">Jane</li>
-          <li class="list-group-item">Joseph</li>
-          <li class="list-group-item">Miki</li>
-          <li class="list-group-item">Selena</li>
-        </ul>
+    </ng-template>
+    <ng-template [ngIf]="!matched">
+      <div class="container">
+          <h3 class="text-center">Your <em>matched</em> fin!</h3>
       </div>
-    </div>
-  </div>
+
+      <div class="container-fluid">
+          <div class="row">
+              <div class="card mx-auto pt-4 pl-3 text-center bg-transparent" style="width: 25rem; border: none">
+                  <span><img src="./images/woman-smiling-perfect-smile-white-teeth-outdoor-looking-camera-copyspace-99210871.jpg" class="card-img-top rounded-circle" alt="..." style="height: 100px; width:100px">
+                  <div class="pt-1" data-person-info>
+                  </div></span>
+              </div>
+          </div>
+      <div class="container pt-5">
+        <div class="row">
+          <div class="card-deck row">
+            <div class="col-sm-4 pb-3">
+              <div class="card">
+                <a href="./match.html">
+                  <img
+                    class="card-img-top"
+                    src="./images/headphones.jpeg"
+                    alt="Card image cap"
+                    style="height: 225px; width: 100%; cursor: pointer"
+                  />
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title text-center">Music</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 pb-3">
+              <div class="card">
+                <img
+                  class="card-img-top"
+                  src="./images/rockclimbing.jpeg"
+                  alt="Card image cap"
+                  style="height: 225px; width: 100%; cursor: pointer"
+                />
+                <div class="card-body">
+                  <h5 class="card-title text-center">Rock Climbing</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 pb-4">
+              <div class="card">
+                <img
+                  class="card-img-top"
+                  src="./images/mountainbike.jpeg"
+                  alt="Card image cap"
+                  style="height: 225px; width: 100%; cursor: pointer"
+                />
+                <div class="card-body">
+                  <h5 class="card-title text-center">Mountain Biking</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
   <script
   src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
