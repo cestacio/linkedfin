@@ -9,7 +9,7 @@ const getRandomIndex = () => Math.floor(Math.random() * People.length);
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  matched = true;
+  // matched = true;
   duplicates = [];
 
   randomize() {

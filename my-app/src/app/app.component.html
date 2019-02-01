@@ -54,7 +54,6 @@
       </nav>
     </div>
 
-    <ng-template [ngIf]="matched">
       <div class="container w-75 pt-5 pb-5" style="background-color: rgba(255, 255, 224, 0.65); border-radius: 10px">
         <h1 class="text-center mx-auto font-weight-bold">Music</h1>
         <hr class="pb-2">
@@ -78,9 +77,8 @@
           </div>
         </div>
       </div>
-    </ng-template>
-    <ng-template [ngIf]="!matched">
-      <div class="container">
+
+      <!-- <div class="container">
           <h3 class="text-center">Your <em>matched</em> fin!</h3>
       </div>
 
@@ -138,8 +136,7 @@
             </div>
           </div>
         </div>
-      </div>
-    </ng-template>
+      </div> -->
   <script
   src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
